@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import * as Sentry from '@sentry/browser';
 import { appDidStart } from './action-creators/app';
 import I18n from './components/I18n';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const { whyDidYouUpdate } = require('why-did-you-update');
@@ -26,6 +28,7 @@ class App extends Component {
    * Registers the component for the native events and fires the onload AppCommand.
    */
   componentDidMount() {
+    Sentry.captureMessage('App did start');
     this.props.store.dispatch(appDidStart(`${window.location.pathname}${window.location.search}`));
   }
 
@@ -35,13 +38,15 @@ class App extends Component {
    */
   render() {
     return (
-      <Provider store={this.props.store}>
-        <I18n.Provider locales={this.props.locale} lang={process.env.LOCALE}>
-          <div>
-            {this.props.children}
-          </div>
-        </I18n.Provider>
-      </Provider>
+      <ErrorBoundary>
+        <Provider store={this.props.store}>
+          <I18n.Provider locales={this.props.locale} lang={process.env.LOCALE}>
+            <div>
+              {this.props.children}
+            </div>
+          </I18n.Provider>
+        </Provider>
+      </ErrorBoundary>
     );
   }
 }

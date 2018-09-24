@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/browser';
 import AppCommand from '../AppCommand';
 import event from '../Event';
 import errorManager from '../ErrorManager';
@@ -8,6 +9,7 @@ import * as errorHandleTypes from '../../constants/ErrorHandleTypes';
 import * as processTypes from '../../constants/ProcessTypes';
 import { ETIMEOUT } from '../../constants/Pipeline';
 import logGroup from '../../helpers/logGroup';
+import { setWebStorageEntry } from '../../commands/webStorage';
 
 /**
  * The PipelineManager class.
@@ -205,6 +207,7 @@ class PipelineManager {
       err.validationErrors = validationErrors;
     }
 
+    Sentry.captureException(err);
     request.reject(err);
 
     // Stop if this error code was set to be suppressed.
