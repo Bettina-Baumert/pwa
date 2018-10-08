@@ -10,6 +10,8 @@ import 'Styles/fonts';
 import 'Extensions/portals';
 import React from 'react';
 import { render } from 'react-dom';
+import * as Sentry from '@sentry/browser';
+import ErrorTracking from '@shopgate/pwa-core/classes/ErrorTracking';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { configureStore } from '@shopgate/pwa-common/store';
 import { appWillStart } from '@shopgate/pwa-common/action-creators/app';
@@ -18,6 +20,10 @@ import fetchClientInformation from '@shopgate/pwa-common/actions/client/fetchCli
 import Pages from './pages';
 import reducers from './pages/reducers';
 import subscribers from './pages/subscribers';
+import pck from './package';
+
+new ErrorTracking(pck, Sentry).init();
+Sentry.captureMessage('App will start');
 
 injectTapEventPlugin();
 smoothscrollPolyfill();
