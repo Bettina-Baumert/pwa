@@ -47,6 +47,7 @@ class FilterBar extends Component {
   componentDidMount() {
     this.updateView();
     this.setScrollListener();
+    throw new Error('Something went horribly wrong!');
   }
 
   /**
