@@ -32,7 +32,7 @@ class Category extends PureComponent {
    */
   render() {
     return (
-      <View background={colors.background}>
+      <View background={colors.light}>
         <Consume context={RouteContext} props={map}>
           {this.consumeRenderer}
         </Consume>

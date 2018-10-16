@@ -5,6 +5,6 @@ export default css({
   position: 'relative',
   display: 'block',
   background: colors.light,
-  fontSize: 14,
   height: '100%',
+  padding: '0 5px',
 }).toString();

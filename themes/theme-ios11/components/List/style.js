@@ -5,11 +5,12 @@ import variables from 'Styles/variables';
 export const IMAGE_SPACE = 72;
 
 const item = css({
-  marginLeft: variables.gap.big,
+  margin: `0 ${variables.gap.bigger}px`,
+  boxShadow: `0 1px 0 0 ${colors.darkGray}`,
 }).toString();
 
 const itemNotLast = css({
-  boxShadow: `0 1px 0 0 ${colors.darkGray}`,
+
   marginBottom: 1,
 }).toString();
 

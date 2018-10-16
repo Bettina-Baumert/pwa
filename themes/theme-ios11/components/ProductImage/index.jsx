@@ -112,6 +112,7 @@ class ProductImage extends Component {
     return (
       <Image
         {...this.props}
+        className={styles.image}
         backgroundColor={colors.light}
         onError={this.imageLoadingFailed}
       />
