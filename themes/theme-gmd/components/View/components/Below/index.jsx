@@ -1,6 +1,6 @@
 import React from 'react';
 import Consume from '@shopgate/pwa-common/components/Consume';
-import { ViewContext } from '../../context';
+import { ViewContext } from '@shopgate/pwa-common/providers';
 
 const map = {
   bottom: 'bottom',

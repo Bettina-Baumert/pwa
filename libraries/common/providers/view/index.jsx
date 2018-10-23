@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ViewContext } from 'Components/View/context';
+import ViewContext from './context';
 
 /**
  * The ViewProvider component.
@@ -20,13 +20,6 @@ class ViewProvider extends Component {
       top: 0,
       bottom: 0,
     };
-  }
-
-  /**
-   * @returns {boolean}
-   */
-  shouldComponentUpdate() {
-    return true;
   }
 
   /**

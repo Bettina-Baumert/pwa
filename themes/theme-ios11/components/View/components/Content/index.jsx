@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import appConfig from '@shopgate/pwa-common/helpers/config';
 import event from '@shopgate/pwa-core/classes/Event';
 import { RouteContext } from '@virtuous/react-conductor/Router';
-import ViewProvider from '../../../../providers/View';
+import { ViewProvider } from '@shopgate/pwa-common/providers';
 import Above from '../Above';
 import Below from '../Below';
 import styles from './style';

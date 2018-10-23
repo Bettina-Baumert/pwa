@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Consume from '@shopgate/pwa-common/components/Consume';
-import { ViewContext } from 'Components/View/context';
+import { ViewContext } from '@shopgate/pwa-common/providers';
 import Sheet from '@shopgate/pwa-ui-shared/Sheet';
 import Content from './components/Content';
 import styles from './style';

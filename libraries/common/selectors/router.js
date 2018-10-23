@@ -48,6 +48,20 @@ export const getCurrentParams = createSelector(
 
 /**
  * @param {Object} state The global state.
+ * @returns {string|null} The current history pattern.
+ */
+export const getCurrentPattern = createSelector(
+  () => getCurrentRouteHelper(),
+  (route) => {
+    if (!route || !route.pattern) {
+      return null;
+    }
+    return route.pattern;
+  }
+);
+
+/**
+ * @param {Object} state The global state.
  * @returns {string|null} The current history pathname.
  */
 export const getCurrentPathname = createSelector(
