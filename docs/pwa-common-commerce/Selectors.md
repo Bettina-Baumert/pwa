@@ -20,7 +20,7 @@ import { getCartItems } from '@shopgate/pwa-common-commerce/cart/selectors';
 
 ---
 
-## getCartItemById(state, props)
+## getCartItemById
 
 Selects a cartIitem of the given ID.
 
