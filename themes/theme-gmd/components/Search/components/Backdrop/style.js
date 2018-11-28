@@ -1,8 +1,7 @@
 import { css } from 'glamor';
-import colors from 'Styles/colors';
 
 export default css({
-  background: colors.background,
+  background: 'rgba(0, 0, 0, .5)',
   bottom: 0,
   left: 0,
   position: 'absolute',

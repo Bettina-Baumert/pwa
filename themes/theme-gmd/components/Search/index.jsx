@@ -18,6 +18,7 @@ class Search extends Component {
   static propTypes = {
     fetchSuggestions: PropTypes.func.isRequired,
     navigate: PropTypes.func.isRequired,
+    pop: PropTypes.func.isRequired,
   }
 
   /**
@@ -49,6 +50,7 @@ class Search extends Component {
    */
   close = () => {
     this.toggle(false);
+    this.props.pop();
   }
 
   /**
